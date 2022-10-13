@@ -23,4 +23,3 @@ function drawSquares(x, y, size) {
     context.fillRect(x,y,size,size);
 }
 
-console.log(r,g,b);
