@@ -15,7 +15,7 @@ function draw() {
 function drawDiagonalLines() {
     let i = 0;
     while (i <= 6) {
-        Utils.drawLine(i*30+50,i*30+175,i*30+175,i*30+50);
+        Utils.drawLine(i*25+50,i*25+200,i*25+200,i*25+50);
         i++;
     }
 }
