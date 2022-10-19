@@ -14,8 +14,10 @@ function draw() {
 
 function drawLines() {
     let i = 0;
+    let step = 25;
+    let offset = 75;
     while (i<11) {
-        Utils.drawLine(75, 25*i+75, 325, 25*i+75);
+        Utils.drawLine(75, (step*i)+offset, 325, (step*i)+offset);
         i++;
     }
 }
