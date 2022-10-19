@@ -24,15 +24,15 @@ export function hsl(h, s, l) {
 }
 
 /**
- * fill a circle
+ * draw a circle
  * @param {number} x x-coordinate of the center of the circle
  * @param {number} y y-coordinate of the center of the circle
  * @param {number} r the radius of the circle
  */
-export function fillCircle(x, y, r) {
+export function strokeCircle(x, y, r) {
     context.beginPath();
     context.arc(x, y, r, 0, Math.PI * 2);
-    context.fill();
+    context.stroke();
 }
 
 export function drawLine(x1, y1, x2, y2) {
