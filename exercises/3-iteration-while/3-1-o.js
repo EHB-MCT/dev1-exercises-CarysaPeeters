@@ -14,10 +14,10 @@ function draw() {
 
 function drawGradient() {
     let i = 0;
-    while (i <= ) {
-        let gray = ;
-        context.strokeStyle = Utils.rgb(gray, gray, gray);
-        Utils.drawLine(, , , );
+    while (i <= 255 ) {
+        
+        context.fillStyle = Utils.rgb(i, i, i);
+        context.fillRect(50 + i, 50, 1, 300);
         i++;
     }
 }
