@@ -23,6 +23,10 @@ export function hsl(h, s, l) {
     return "hsl(" + h + "," + s + "%," + l + "%)";
 }
 
+export function hsla(h, s, l, a) {
+    return "hsla(" + h + "," + s + "%," + l + "%," + a + ")";
+}
+
 /**
  * draw a circle
  * @param {number} x x-coordinate of the center of the circle
@@ -46,3 +50,21 @@ export function rgb(r, g, b) {
     let rgb = "rgb(" + r + "," + g + "," + b + ")";
     return rgb;
 }
+
+export function rgba(r, g, b, a) {
+    let rgb = "rgba(" + r + "," + g + "," + b + "," + a + ")";
+    return rgba;
+}
+
+/**
+ * fill a circle
+ * @param {number} x x-coordinate of the center of the circle
+ * @param {number} y y-coordinate of the center of the circle
+ * @param {number} r the radius of the circle
+ */
+ export function fillCircle(x, y, r) {
+    context.beginPath();
+    context.arc(x, y, r, 0, Math.PI * 2);
+    context.fill();
+}
+
