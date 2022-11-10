@@ -2,15 +2,21 @@
 import context from "../../scripts/context.js";
 import * as Utils from "../../scripts/utils.js";
 
+let margin = 5;
+let brickWidth = 100;
+let brickHeight = 50;
+let offset = 50;
+
 drawBricks();
 
 function drawBricks() {
-    let margin = 50;
-    for (let i = 0; i < 660; i+=110) {
-        for (let j = 1; j < 4; j++) {
-            context.fillStyle = "#8b0000";
-            context.fillRect(i + margin, 2.2 * j * margin - 55, 100, 50);
-            context.fillRect(i + 2 * margin, 2 * j * margin + j * 10, 100, 50);
-        }  
+    context.fillStyle = 'darkred';
+
+    for(let j = 0; j < 6; j++) {
+        for(let i = 0; i < 6; i++) {
+            console.log(j % 2);
+            context.fillRect(50 + ((brickWidth + margin) * i) + (j % 2 * offset), 50 + ((brickHeight + margin) * j), brickWidth, brickHeight);
+        }
     }
+    
 }
