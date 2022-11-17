@@ -1,6 +1,71 @@
 "use strict";
 import context from "../../scripts/context.js";
 import * as Utils from "../../scripts/utils.js";
+let width = context.canvas.width;
+let height = context.canvas.height;
+
+drawCards();
+
+document.getElementById("cardsButton").onclick = drawCards;
+
+function drawCards() {
+    drawBackground();
+    let value = Number(document.getElementById("cardsAmount").value);
+    console.log(value);
+
+    for(let i = 0; i < value; i++) {
+        drawCard(50 + i % 8 * 150, 50 + Math.floor(i / 8) * 225);
+    }
+}
+
+function drawCard(x,y) {
+    context.fillStyle = "white";
+    context.strokeStyle = "black";
+    context.fillRect(x, y, 125, 200);
+    context.strokeRect(x, y, 125, 200);
+    
+    drawRandomShape(x, y);
+    drawRandomText(x, y);    
+}
+
+function drawBackground () {
+    context.fillStyle = "darkgreen";
+    context.fillRect(0, 0, width, height);
+}
+
+function drawRandomShape(x, y) {
+    let randomShape = Math.floor(Math.random() * 4);
+    if(randomShape == 0) {
+        context.fillStyle = "red";
+        drawHeart(x + 125 / 2, y + 50);
+    } else if(randomShape == 1) {
+        context.fillStyle = "black";
+        drawClover(x + 125 / 2, y + 50);
+    } else if(randomShape == 2) {
+        context.fillStyle = "black";
+        drawPike(x + 125 / 2, y + 50);
+    } else {
+        context.fillStyle = "red";
+        drawDiamond(x + 125 / 2, y + 50);
+    }
+}
+
+function drawRandomText (x, y) {
+    let randomNumber = Math.ceil(Math.random() * 13);
+    console.log(randomNumber);
+    context.font = "32px Arial";
+    context.textAlign = "center";
+    context.textBaseline = "middle";
+    if(randomNumber == 11) {
+        context.fillText("J", x + 125/2, y + 150);
+    } else if(randomNumber == 12) {
+        context.fillText("Q", x + 125/2, y + 150);
+    } else if(randomNumber == 13) {
+        context.fillText("K", x + 125/2, y + 150);
+    } else {
+        context.fillText(randomNumber, x + 125/2, y + 150);
+    }
+}
 
 function drawHeart(x, y) {
     context.beginPath();
