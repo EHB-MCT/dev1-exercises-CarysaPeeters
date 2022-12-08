@@ -9,9 +9,9 @@ window.onmousemove = move;
 
 let cells = [];
 let player = {
-    x: width/2,
-    y: height/2,
-    size: 50,
+	x: width / 2,
+	y: height / 2,
+	size: 50,
 };
 
 setup();
@@ -32,7 +32,7 @@ function setup() {
 }
 
 function update() {
-    context.fillStyle = "white";
+	context.fillStyle = "white";
 	context.fillRect(0, 0, width, height);
 	for (let i = 0; i < cells.length; i++) {
 		let cell = cells[i];
@@ -47,8 +47,8 @@ function update() {
 		}
 		drawCircle(cell);
 	}
-    context.fillStyle = "red";
-    Utils.fillCircle(player.x, player.y, player.size);
+	context.fillStyle = "red";
+	Utils.fillCircle(player.x, player.y, player.size);
 	requestAnimationFrame(update);
 }
 
